@@ -30,14 +30,13 @@
 </template>
 
 <script lang="ts">
-import * as tf from "@tensorflow/tfjs";
-import * as handpose from "@tensorflow-models/handpose";
-import "@tensorflow/tfjs-backend-webgl";
+import * as tf from '@tensorflow/tfjs';
+import * as handpose from '@tensorflow-models/handpose';
+import '@tensorflow/tfjs-backend-webgl';
 //@ts-ignore
-import * as fp from "fingerpose";
-import { Vue, Component, Ref } from "nuxt-property-decorator";
-import * as ap from "../../dist/index";
-
+import * as fp from 'fingerpose';
+import { Vue, Component, Ref } from 'nuxt-property-decorator';
+import * as ap from '../../dist/index';
 
 @Component({})
 export default class Index extends Vue {
@@ -65,8 +64,8 @@ export default class Index extends Vue {
     console.log({ e });
   }
   public async findHand(model: handpose.HandPose) {
-    const video = document.querySelector("video");
-    const canvas = document.getElementById("canvas") as HTMLCanvasElement;
+    const video = document.querySelector('video');
+    const canvas = document.getElementById('canvas') as HTMLCanvasElement;
     if (video && video.readyState === 4) {
       const { videoHeight, videoWidth } = video;
 
@@ -78,9 +77,9 @@ export default class Index extends Vue {
       canvas.width = videoWidth;
       canvas.height = videoHeight;
 
-      const predictions = await model.estimateHands(video,true);
+      const predictions = await model.estimateHands(video, true);
       this.estimatGesture(predictions);
-      const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+      const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       this.drowHand(predictions, ctx);
     }
@@ -101,10 +100,10 @@ export default class Index extends Vue {
 
   public drowHand(
     predictions: handpose.AnnotatedPrediction[],
-    ctx: CanvasRenderingContext2D
+    ctx: CanvasRenderingContext2D,
   ) {
     if (predictions.length > 0) {
-      predictions.forEach((x) => {
+      predictions.forEach(x => {
         const landmarks = x.landmarks;
 
         for (let j = 0; j < Object.keys(this.fingerJoints).length; j++) {
@@ -116,13 +115,13 @@ export default class Index extends Vue {
             ctx.beginPath();
             ctx.moveTo(
               landmarks[firstJointIndex][0],
-              landmarks[firstJointIndex][1]
+              landmarks[firstJointIndex][1],
             );
             ctx.lineTo(
               landmarks[secondJointIndex][0],
-              landmarks[secondJointIndex][1]
+              landmarks[secondJointIndex][1],
             );
-            ctx.strokeStyle = "white";
+            ctx.strokeStyle = 'white';
             ctx.lineWidth = 2;
             ctx.stroke();
           }
@@ -134,7 +133,7 @@ export default class Index extends Vue {
           const z = landmarks[i][2];
           ctx.beginPath();
           ctx.arc(x, y, 2, 0, 2 * Math.PI);
-          ctx.fillStyle = "red";
+          ctx.fillStyle = 'red';
           ctx.fill();
         }
       });
@@ -169,8 +168,8 @@ export default class Index extends Vue {
 </script>
 
 <style>
-video{
-   -webkit-transform: scaleX(-1);
+video {
+  -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
 canvas {

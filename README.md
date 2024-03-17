@@ -11,7 +11,7 @@ Gesture detection works in 3 steps:
 3. Comparing the result to a set of gesture description
 
 **Step (1) is performed by TensorFlow's "[handpose](https://www.npmjs.com/package/@tensorflow-models/handpose)",
- Step (2) and (3) are handled by [fingerpose](https://www.npmjs.com/package/fingerpose) library.**
+Step (2) and (3) are handled by [fingerpose](https://www.npmjs.com/package/fingerpose) library.**
 
 ## Installation
 
@@ -28,29 +28,27 @@ A [fully working example](https://github.com/mAminP/fingerpose-gestures/tree/mai
 ### Include "handpose","fingerpose" and this library
 
 ```js
-import * as tf from "@tensorflow/tfjs";
-import * as handpose from "@tensorflow-models/handpose";
-import "@tensorflow/tfjs-backend-webgl";
-import * as fp from "fingerpose";
-import * as fpg from "fingerpose-gestures";
-
+import * as tf from '@tensorflow/tfjs';
+import * as handpose from '@tensorflow-models/handpose';
+import '@tensorflow/tfjs-backend-webgl';
+import * as fp from 'fingerpose';
+import * as fpg from 'fingerpose-gestures';
 ```
 
 ### Configure the gesture recognizer with known gestures
 
 ```js
 const GE = new fp.GestureEstimator([
-    
-    // add "✌🏻" and "👍" as sample gestures
-    fp.Gestures.VictoryGesture,
-    fp.Gestures.ThumbsUpGesture,
-    
-    // add other gestures by fingerpose-gestures 
-    fpg.Gestures.thumbsDownGesture,
-    fpg.Gestures.fingerSplayedGesture,
-    fpg.Gestures.raisedHandGesture
-    
-    // ... and more
+  // add "✌🏻" and "👍" as sample gestures
+  fp.Gestures.VictoryGesture,
+  fp.Gestures.ThumbsUpGesture,
+
+  // add other gestures by fingerpose-gestures
+  fpg.Gestures.thumbsDownGesture,
+  fpg.Gestures.fingerSplayedGesture,
+  fpg.Gestures.raisedHandGesture,
+
+  // ... and more
 ]);
 ```
 
@@ -82,16 +80,16 @@ The result is an object containing possible gestures and their confidence, for e
 
 ## Gestures
 
-| name            | emoji | path                                |
-| --------------- | ----- | ----------------------------------- |
-| thumbs_up       | 👍     | `fpg.Gestures.thumbsUpGesture`      |
-| victory         | ✌     | `fpg.Gestures.victoryGesture`       |
-| thumbs_down     | 👎     | `fpg.Gestures.thumbsDownGesture`    |
-| finger_splayed  | 🖐     | `fpg.Gestures.fingerSplayedGesture` |
-| raised_hand     | ✋     | `fpg.Gestures.raisedHandGesture`    |
-| pinching        | 🤏     | `fpg.Gestures.pinchingGesture`      |
-| ok              | 👌     | `fpg.Gestures.okGesture`            |
-| fist            | ✊     | `fpg.Gestures.fistGesture`            |
-<!-- | ***up coming*** | --    | --                                  | -->
-<!-- | love_you        | 🤟     | `fpg.Gestures.loveYouGesture`       | -->
-<!-- | oncoming_fist        | 👊     | `fpg.Gestures.oncomingFistGesture`       | -->
+| name           | emoji           | path                                |
+| -------------- | --------------- | ----------------------------------- | ---------------------------------- | --- |
+| thumbs_up      | 👍              | `fpg.Gestures.thumbsUpGesture`      |
+| victory        | ✌              | `fpg.Gestures.victoryGesture`       |
+| thumbs_down    | 👎              | `fpg.Gestures.thumbsDownGesture`    |
+| finger_splayed | 🖐              | `fpg.Gestures.fingerSplayedGesture` |
+| raised_hand    | ✋              | `fpg.Gestures.raisedHandGesture`    |
+| pinching       | 🤏              | `fpg.Gestures.pinchingGesture`      |
+| ok             | 👌              | `fpg.Gestures.okGesture`            |
+| fist           | ✊              | `fpg.Gestures.fistGesture`          |
+| <!--           | **_up coming_** | --                                  | --                                 | --> |
+| <!--           | love_you        | 🤟                                  | `fpg.Gestures.loveYouGesture`      | --> |
+| <!--           | oncoming_fist   | 👊                                  | `fpg.Gestures.oncomingFistGesture` | --> |

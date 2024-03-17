@@ -1,5 +1,0 @@
-export * from './Finger'
-export * from './FingerCurl'
-export * from './FingerDirection'
-export * from './IFingerPose'
-export * from './IGestureDescription'

@@ -1,30 +1,21 @@
-import { NuxtConfig } from '@nuxt/types'
+import { NuxtConfig } from '@nuxt/types';
 export default <NuxtConfig>{
-
   head: {
     title: 'demo',
-    link: [
-    ],
-    script: [
-
-    ]
+    link: [],
+    script: [],
   },
-  modules: [
-    'vue-web-cam/nuxt'
-  ],
-  buildModules: [
-    '@nuxt/typescript-build',
-    '@nuxtjs/vuetify'
-  ],
+  modules: ['vue-web-cam/nuxt'],
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/vuetify'],
   vuetify: {
     theme: {
-      dark: true
-    }
+      dark: true,
+    },
   },
   components: [
     {
       path: './components',
-      pathPrefix: false
-    }
-  ]
-}
+      pathPrefix: false,
+    },
+  ],
+};

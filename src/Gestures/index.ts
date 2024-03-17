@@ -6,15 +6,15 @@ import thumbsUpGesture from './thumbsUpGesture';
 import pinchingGesture from './pinchingGesture';
 import fistGesture from './fistGesture';
 import okGesture from './okGesture';
-// import oncomingFistGesture from './oncomingFistGesture';
+import oncomingFistGesture from './oncomingFistGesture';
 export {
-        raisedHandGesture,
-        fingerSplayedGesture,
-        thumbsDownGesture,
-        victoryGesture,
-        thumbsUpGesture,
-        pinchingGesture,
-        okGesture,
-        // oncomingFistGesture,
-        fistGesture
-}
+  raisedHandGesture,
+  fingerSplayedGesture,
+  thumbsDownGesture,
+  victoryGesture,
+  thumbsUpGesture,
+  pinchingGesture,
+  okGesture,
+  oncomingFistGesture,
+  fistGesture,
+};

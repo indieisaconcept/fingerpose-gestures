@@ -1,6 +1,2 @@
-import {
-    bestMatch
-} from './bestMatch';
-export {
-bestMatch
-}
+import { bestMatch } from './bestMatch';
+export { bestMatch };
