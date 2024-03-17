@@ -18,11 +18,6 @@
   "repository": "mAminP/fingerpose-gestures",
   "license": "ISC",
   "author": "M Amin Pasban",
-  "exports": {
-    ".": {
-      "require": "./dist/index.js"
-    }
-  },
   "main": "dist/index.js",
   "typings": "./index.d.ts",
   "files": [
